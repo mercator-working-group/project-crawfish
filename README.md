@@ -16,6 +16,34 @@ The instrumentation of the crawl used to collect data for this project is accomp
 - Identify specific tracking pixels and potential fingerprinting attacks focusing on third-party loaded resources.
 - Generate a report of third-party resources and tracking activity occurring per page (from originally provided seed-list).
 
+## Usage instructions
+
+### Preparations
+
+Setup a Python 3 venv with the required modules:
+
+```
+./setup-python-venv.sh
+```
+
+Activate the Python 3 venv:
+
+```
+source venv/bin/activate
+```
+
+## Clean and analyze crawl results
+
+```
+jupyter notebook
+```
+
+After launching Jupyter, choose `Kernel -> Change Kernel -> project-crawfish` in the menu.
+
+Navigate to `analysis/notebooks/cleanup.ipynb` to perform an initial dataset cleanup.
+
+Use `analysis/notebooks/explore.ipynb` to explore the cleaned dataset.
+
 ## Developer notes
 
 ### Repository overview

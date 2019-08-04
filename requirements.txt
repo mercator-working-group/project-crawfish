@@ -1,0 +1,4 @@
+s3cmd
+
+# for analysis
+ipykernel
