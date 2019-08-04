@@ -32,6 +32,22 @@ Activate the Python 3 venv:
 source venv/bin/activate
 ```
 
+### Provide an input list
+
+Save the initial list as `lists/pre-crawl-seed-list.csv`.
+
+### Pre-crawl
+
+Determines one-depth a-tag linkage structure with a shallow preliminary crawl:
+
+```
+python pre-crawl/main.py lists/pre-crawl-seed-list.csv lists/crawl-seed-list.csv
+```
+
+### OpenWPM crawl
+
+To perform a comprehensive crawl using OpenWPM to instrument Prebid.js-related JavaScript events at page visit, follow the instructions in [./crawl/README.md](./crawl/README.md).
+
 ## Clean and analyze crawl results
 
 ```
@@ -49,6 +65,8 @@ Use `analysis/notebooks/explore.ipynb` to explore the cleaned dataset.
 ### Repository overview
 
 This repo is structured as follows:
+- `lists`: Contains csv files with base site lists for OpenWPM crawls
+- `crawl`: Documentation and configuration to run local crawls on a Mac/Linux using Kubernetes.
 - `crawl/OpenWPM`: Submodule of a Mercator-specific fork of OpenWPM that includes the Prebid.js-modified instrumentation
 - `crawl/openwpm-crawler`: Submodule of the upstream mozilla/openwpm-crawler repo that includes general crawl deployment documentation and helper scripts
 - `pre-crawl`: Python scripts to run the pre-crawl 
