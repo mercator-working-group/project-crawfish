@@ -2,6 +2,20 @@
 
 Unified stack for crawler-based investigation of data sharing and pre-bid activity.
 
+## Acknowledgements
+
+The instrumentation of the crawl used to collect data for this project is accomplished using a [custom fork](https://github.com/mercator-working-group/OpenWPM) of the [OpenWPM](https://github.com/mozilla/OpenWPM) web privacy measurement framework, developed by Steven Englehardt at [Princeton University](https://webtap.princeton.edu/), currently hosted and maintained by [Mozilla](https://mozilla.org).
+
+## Workflow
+
+- Accept an arbitrary seed list of websites
+- Determine one-depth a-tag linkage structure with a shallow preliminary crawl
+- Perform a comprehensive crawl using OpenWPM to instrument Prebid.js-related JavaScript events at page visit
+- Parse OpenWPM data into Pandas table
+- Match against an arbitrary list
+- Identify specific tracking pixels and potential fingerprinting attacks focusing on third-party loaded resources.
+- Generate a report of third-party resources and tracking activity occurring per page (from originally provided seed-list).
+
 ## Developer notes
 
 ### Repository overview
@@ -10,7 +24,7 @@ This repo is structured as follows:
 - `crawl/OpenWPM`: Submodule of a Mercator-specific fork of OpenWPM that includes the Prebid.js-modified instrumentation
 - `crawl/openwpm-crawler`: Submodule of the upstream mozilla/openwpm-crawler repo that includes general crawl deployment documentation and helper scripts
 - `pre-crawl`: Python scripts to run the pre-crawl 
-- `analysis`: Notebooks used to analyze the resulting crawl datasets
+- `analysis`: Contains investigative methodology of OpenWPM result set and graphical exploration
 
 ### Submodules
 
