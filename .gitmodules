@@ -1,0 +1,8 @@
+[submodule "crawl/OpenWPM"]
+	path = crawl/OpenWPM
+	url = git@github.com:mercator-working-group/OpenWPM.git
+	branch = master
+[submodule "crawl/openwpm-crawler"]
+	path = crawl/openwpm-crawler
+	url = https://github.com/mozilla/openwpm-crawler
+	branch = master
